@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header {
+    background-color: #F2F2F2;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ main {
+     background-color: white;
+ }
