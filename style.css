@@ -13,5 +13,11 @@ header {
     justify-content: space-around;
 }
  main {
-     background-color: white;
+    background-color: white;
+    width: 1200px;
+    margin: auto;
  }
+ul {
+    list-style-type: none;
+    margin: 20px 0px;
+}
