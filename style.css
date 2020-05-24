@@ -4,20 +4,60 @@
     box-sizing: border-box;
 }
 
+body {
+
+}
+
 header {
-    background-color: #F2F2F2;
+    background-color: #BF0413;
     height: 100px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border: 1px solid #0D0D0D;
 }
+
  main {
-    background-color: white;
+    background-color: lightgrey;
+    width: 100%;
+ }
+
+.container {
     width: 1200px;
     margin: auto;
- }
+}
+
 ul {
     list-style-type: none;
     margin: 20px 0px;
+}
+
+#text-search {
+    height: 30px;
+    padding: 5px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+#text-search:focus {
+    outline: 0;
+}
+
+#search-button {
+    background-color: #0D0D0D;
+    color: white;
+    border: 1px solid #590202;
+    width: 70px;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.clearfix {
+    content: '';
+    clear: both;
+    display: table;
 }
