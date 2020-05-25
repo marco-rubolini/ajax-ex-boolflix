@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Boolfix</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/2a6dddd505.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -29,8 +30,8 @@
                 <div class="cardfilm">
                     <h3>{{titolo_film}}</h3>
                     <h4>{{titolo_originale}}</h4>
-                    <h4>{{lingua}}</h3>
-                    <span>{{recensioni}}</span>
+                    <h4><img src="img/flags/{{lingua}}.png" alt="{{lingua}}"></h3>
+                    <div class="recensioni">{{{recensioni}}}</div>
                 </div>
         </script>
     </body>
