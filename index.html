@@ -28,9 +28,9 @@
         <script src="main.js" charset="utf-8"></script>
         <script id="template-film" type="text/x-handlebars-template">
                 <div class="cardfilm">
-                    <h3>{{titolo_film}}</h3>
-                    <h4>{{titolo_originale}}</h4>
-                    <h4><img src="img/flags/{{lingua}}.png" alt="{{lingua}}"></h3>
+                    <h3>{{titolo_film}}{{titolo_serie}}</h3>
+                    <h4>{{titolo_originale_film}}{{titolo_originale_serie}}</h4>
+                    <div class="language">{{{lingua}}}</div>
                     <div class="recensioni">{{{recensioni}}}</div>
                 </div>
         </script>
