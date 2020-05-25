@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    var source   = $("#template-film").html();
+    var template = Handlebars.compile(source);
+
 // Intercetto il click sul pulsante di ricerca
 $('#search-button').click(function(){
     ricercaFilm();
@@ -40,17 +43,38 @@ $('#text-search').keypress(function(event){
                  console.log(elencoFilm[i].original_title);
                  console.log(elencoFilm[i].original_language);
                  console.log(elencoFilm[i].vote_average);
+
                  // per ogni film restituito, stamparne in pagina:
                  // titolo
-                 var titolo = 'Titolo ' + elencoFilm[i].title;
+                 var titolo = elencoFilm[i].title;
                  // titolo originale
-                 var titoloOriginale = 'Titolo originale ' + elencoFilm[i].original_title;
+                 var titoloOriginale = elencoFilm[i].original_title;
                  // lingua
-                 var lingua = 'Lingua originale ' + elencoFilm[i].original_language;
+                 var lingua = elencoFilm[i].original_language;
                  // voto
-                 var voto = 'Voto ' + elencoFilm[i].vote_average;
+                 var voto = elencoFilm[i].vote_average;
+
+                 var context = {
+                     titolo_film: titolo,
+                     titolo_originale: titoloOriginale,
+                     lingua: lingua,
+                     recensioni: voto
+                 };
+
+                 var html = template(context);
+
+                 $('.elencofilm').append(html);
+                 // // per ogni film restituito, stamparne in pagina:
+                 // // titolo
+                 // var titolo = 'Titolo ' + elencoFilm[i].title;
+                 // // titolo originale
+                 // var titoloOriginale = 'Titolo originale ' + elencoFilm[i].original_title;
+                 // // lingua
+                 // var lingua = 'Lingua originale ' + elencoFilm[i].original_language;
+                 // // voto
+                 // var voto = 'Voto ' + elencoFilm[i].vote_average;
                  // stampo in pagina
-                 var stamparisultato = $('.container').append('<ul><li>' + titolo + '</li><li>' + titoloOriginale + '</li><li>' + lingua + '</li><li>' + voto + '</li>');
+                 // var stamparisultato = $('.container').append('<ul><li>' + titolo + '</li><li>' + titoloOriginale + '</li><li>' + lingua + '</li><li>' + voto + '</li>');
              }
          },
          'error': function(){

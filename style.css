@@ -61,3 +61,8 @@ ul {
     clear: both;
     display: table;
 }
+
+.cardfilm {
+    width: 200px;
+    text-align: center;
+}

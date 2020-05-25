@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     </head>
     <header>
         <div class="header-left">
@@ -18,10 +19,19 @@
     </header>
     <main>
         <div class="container clearfix">
-
+            <div class="elencofilm">
+            </div>
         </div>
     </main>
     <body>
         <script src="main.js" charset="utf-8"></script>
+        <script id="template-film" type="text/x-handlebars-template">
+                <div class="cardfilm">
+                    <h3>{{titolo_film}}</h3>
+                    <h4>{{titolo_originale}}</h4>
+                    <h4>{{lingua}}</h3>
+                    <span>{{recensioni}}</span>
+                </div>
+        </script>
     </body>
 </html>
