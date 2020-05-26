@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>Boolfix</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/2a6dddd505.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     </head>
+    <body>
     <header>
         <div class="header-left">
             <img src="img/logo.png" alt="logo-boolfix">
@@ -24,14 +25,14 @@
             </div>
         </div>
     </main>
-    <body>
         <script src="main.js" charset="utf-8"></script>
         <script id="template-film" type="text/x-handlebars-template">
                 <div class="cardfilm">
-                    <h3>{{titolo_film}}{{titolo_serie}}</h3>
+                    <!-- <h3>{{titolo_film}}{{titolo_serie}}</h3>
                     <h4>{{titolo_originale_film}}{{titolo_originale_serie}}</h4>
                     <div class="language">{{{lingua}}}</div>
-                    <div class="recensioni">{{{recensioni}}}</div>
+                    <div class="recensioni">{{{recensioni}}}</div> -->
+                    <img src="{{{immagine}}}" alt="">
                 </div>
         </script>
     </body>

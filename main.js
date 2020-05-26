@@ -9,6 +9,7 @@ $('#search-button').click(function(){
     ricercaFilm();
 })
 
+// intercetto il tasto invio nella stringa di ricerca
 $('#text-search').keyup(function(event){
     if (event.which == 13) {
         ricercaFilm();
@@ -89,12 +90,12 @@ $('#text-search').keyup(function(event){
 
 function disegna_card(dati){
 
-    var vote = parseInt(dati.vote_average)/2;
+    // var vote = (dati.vote_average)/2;
     var lingua = dati.original_language;
     var titoloFilm = dati.title;
     var titoloFilmOriginal = dati.original_title;
     var titoloSerie = dati.name;
-    var titoloSerieOriginal = dati. original_name;
+    var titoloSerieOriginal = dati.original_name;
 
     var context = {
         titolo_film: dati.title,
@@ -102,12 +103,24 @@ function disegna_card(dati){
         titolo_serie: dati.name,
         titolo_originale_serie: titolo(titoloSerie, titoloSerieOriginal),
         lingua: bandiere(lingua),
-        recensioni : disegnaStelle(vote)
+        recensioni: stelline(normalizzaVoto(dati.vote_average)),
+        immagine: immagine(dati.poster_path)
     };
 
     var html = template(context);
 
     $('.elencofilm').append(html);
+
+}
+
+function immagine(linkImmagine){
+
+    if (linkImmagine === null) {
+        link = 'img/anteprima-vuota.jpg'
+    } else {
+        link = 'https://image.tmdb.org/t/p/w185' + linkImmagine;
+    }
+    return link
 }
 
 function titolo (title, original_title){
@@ -120,13 +133,23 @@ function titolo (title, original_title){
 };
 
 
-function disegnaStelle (num){
-    var stars = '';
-    for (var i = 0; i < num; i++) {
-        stars += '<i class="fas fa-star"></i>';
-    }
-    return stars
+function normalizzaVoto (num){
+    var voto5 = num / 2;
+    return Math.ceil(voto5);
 }
+
+function stelline (numerostelline){
+    var stella = '';
+    for (var i = 1; i <= 5; i++) {
+        if (i <= numerostelline) {
+            stella += '<i class="fas fa-star"></i>'
+        } else {
+            stella += '<i class="far fa-star"></i>'
+        }
+    }
+    return stella
+}
+
 
 function bandiere (lingua){
     var lingue = ['ar','be','br','ca','cz','de','dk','es','fr','gb','hu','it','ja','nl','pl','pt','en'];
@@ -134,11 +157,12 @@ function bandiere (lingua){
         if (lingua == 'en') {
             lingua = 'gb'
         }
-        return '<img src="img/flags/' + lingua + '.png">'
-    } else {
-        return lingua
+        return '<img src="img/flags/' + lingua + '.png" alt="' + lingua + '">'
     }
+        return lingua
+
 }
+
 
 
 })
