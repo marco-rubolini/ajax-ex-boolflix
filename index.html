@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Boolfix</title>
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
         <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/2a6dddd505.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,7 +15,8 @@
     <body>
     <header>
         <div class="header-left">
-            <img src="img/logo.png" alt="logo-boolfix">
+            <a href="index.html"><img src="img/logo.png" alt="logo-boolfix"></a>
+            <!-- <img src="img/logo.png" alt="logo-boolfix"> -->
         </div>
         <div class="header-right">
             <input id="text-search" type="text" name="" value="" placeholder="Cerca...">
@@ -20,10 +24,57 @@
         </div>
     </header>
     <main>
-        <div class="container clearfix">
-            <div class="elencofilm">
+        <!-- <div class="container"> -->
+            <section class="intro">
+                <div class="container">
+                    <div class="about">
+                        <h1>Film, serie TV e tanto altro. Senza limiti.</h1>
+                        <span class="description">Guarda ciò che vuoi ovunque. Disdici quando vuoi.</span>
+                    </div>
+                    <div class="trend">
+                        <div class="trend-film">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="risultati-ricerca">
+                <div class="container">
+                    <h2 class="titolo-ricerca">
+                        Risultati ricerca per:
+                        "<span id="ricerca-utente"></span>"
+                    </h2>
+                    <div class="film-risultati">
+
+                            <h2 class="categoria-ricerca">Film</h2>
+                            <div class="elencofilm">
+                            </div>
+
+                    </div>
+                    <div class="serie-tv-risultati">
+
+                            <h2 class="categoria-ricerca">Serie tv</h2>
+                            <div class="elencoserie">
+                            </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- <div class="popular-movie">
             </div>
-        </div>
+            <div class="serie-top-rated">
+
+            </div> -->
+            <!-- <div class="film">
+                <h2>Film</h2>
+                <div class="elencofilm">
+                </div>
+            </div> -->
+            <!-- <div class="serie-tv">
+                <h2>Serie tv</h2>
+                <div class="elencoserie">
+                </div>
+            </div> -->
+
     </main>
         <script src="main.js" charset="utf-8"></script>
         <script id="template-film" type="text/x-handlebars-template">
@@ -31,9 +82,25 @@
                     <!-- <h3>{{titolo_film}}{{titolo_serie}}</h3>
                     <h4>{{titolo_originale_film}}{{titolo_originale_serie}}</h4>
                     <div class="language">{{{lingua}}}</div>
-                    <div class="recensioni">{{{recensioni}}}</div> -->
-                    <img src="{{{immagine}}}" alt="">
+                    <div class="recensioni">{{{recensioni}}}</div>
+                    <img class="poster" src="{{{immagine}}}" alt=""> -->
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img class="poster" src="{{{immagine}}}" alt="">
+                          <span id="tipo-contenuto"><{{tipo}}</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="titolo">{{{titolo}}}</div>
+                            <div class="titolo-originale">{{{titolo_originale}}}</div>
+                            <div class="trama">{{{trama}}}</div>
+                            <div class="language">{{{lingua}}}</div>
+                            <div class="recensioni">{{{voto}}}</div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
         </script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
     </body>
 </html>
